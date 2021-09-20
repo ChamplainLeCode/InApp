@@ -24,7 +24,7 @@ class _SplashState extends ScreenState<SplashScreen> {
   @override
   Widget builder(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xFF123456),
         body: Column(children: [
           Spacer(
             flex: 2,
