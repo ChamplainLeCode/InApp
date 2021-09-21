@@ -1,5 +1,4 @@
-import 'package:in_app/app/screens/home_screen.dart';
-import 'package:in_app/app/screens/dashboard/home_dash_board_screen.dart';
+import 'package:in_app/app/screens/splash/splash_screen.dart';
 
 
 /// Generated buy Karee
@@ -8,7 +7,6 @@ import 'package:in_app/app/screens/dashboard/home_dash_board_screen.dart';
 
 List<Map<Symbol, dynamic>> screens = [
 
-	{#name: 'dashboard', #screen: () => HomeDashBoardScreen()},
-	{#name: 'home', #screen: () => HomeScreen(), #initial: true},
+	{#name: 'spalsh', #screen: () => SplashScreen(), #initial: true},
 
 ];

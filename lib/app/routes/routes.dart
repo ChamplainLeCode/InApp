@@ -6,6 +6,6 @@ import 'package:karee/navigation.dart' show Route;
  */
 void registeredRoute() {
   Route.on('/', 'HomeController@index');
-  Route.on('/dashboard', 'DashBoardController@home');
-  Route.on('/dashboard/{menu}', 'DashBoardController@menuScreen');
+  // Route.on('/dashboard', 'DashBoardController@home');
+  // Route.on('/dashboard/{menu}', 'DashBoardController@menuScreen');
 }

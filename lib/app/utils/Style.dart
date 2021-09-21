@@ -27,16 +27,24 @@ class Style {
 
   /// -------------------------- Styles -----------------------------
 
-  static final TextStyle profileText = TextStyle(color: whiteBackground, fontSize: 20);
+  static final TextStyle profileText =
+      TextStyle(color: whiteBackground, fontSize: 20);
 
-  static final TextStyle profileTextGrey = TextStyle(color: Colors.black45, fontWeight: FontWeight.w400);
+  static final TextStyle profileTextGrey =
+      TextStyle(color: Colors.black45, fontWeight: FontWeight.w400);
 
-  static TextStyle get moduleItemDetail =>
-      TextStyle(color: Style.primaryDashboardDarkColor, fontWeight: FontWeight.w300);
+  static final String fontFamilyLora = 'Lora';
 
-  static TextStyle get moduleDetailStyle =>
-      TextStyle(color: Colors.blueGrey, fontSize: 16, fontWeight: FontWeight.w300);
+  static final String fontFamilyPacifico = 'Pacifico';
 
-  static TextStyle get moduleTitleStyle =>
-      TextStyle(color: primaryDashboardDarkColor, fontSize: 22, fontWeight: FontWeight.w400);
+  static TextStyle get moduleItemDetail => TextStyle(
+      color: Style.primaryDashboardDarkColor, fontWeight: FontWeight.w300);
+
+  static TextStyle get moduleDetailStyle => TextStyle(
+      color: Colors.blueGrey, fontSize: 16, fontWeight: FontWeight.w300);
+
+  static TextStyle get moduleTitleStyle => TextStyle(
+      color: primaryDashboardDarkColor,
+      fontSize: 22,
+      fontWeight: FontWeight.w400);
 }
