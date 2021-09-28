@@ -3,7 +3,11 @@
 // @dart = 2.12
 
 import 'dart:core';
+import 'package:in_app/app/controllers/auth/authentication_controller.dart'
+    as prefix3;
 import 'package:in_app/app/controllers/home/home_controller.dart' as prefix1;
+import 'package:in_app/app/controllers/product/production_controller.dart'
+    as prefix2;
 import 'package:karee_inject/src/annotations/controller.dart' as prefix0;
 
 // ignore_for_file: prefer_adjacent_string_concatenation
@@ -45,19 +49,88 @@ final _data = <r.Reflectable, r.ReflectorData>{
               r'hashCode': 0,
               r'runtimeType': 0,
               r'index': 0
+            }),
+        r.NonGenericClassMirrorImpl(
+            r'ProductionController',
+            r'.ProductionController',
+            7,
+            1,
+            const prefix0.ControllerReflectable(),
+            const <int>[-1],
+            null,
+            null,
+            -1,
+            {},
+            {},
+            {r'': (bool b) => () => b ? prefix2.ProductionController() : null},
+            -1,
+            -1,
+            const <int>[-1],
+            null,
+            {
+              r'==': 1,
+              r'toString': 0,
+              r'noSuchMethod': 1,
+              r'hashCode': 0,
+              r'runtimeType': 0,
+              r'showOrderScreen': 0,
+              r'showOrderDetailScreen': 0,
+              r'showProductDetailScreen': 0,
+              r'index': 0
+            }),
+        r.NonGenericClassMirrorImpl(
+            r'AuthenticationController',
+            r'.AuthenticationController',
+            7,
+            2,
+            const prefix0.ControllerReflectable(),
+            const <int>[-1],
+            null,
+            null,
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) =>
+                  () => b ? prefix3.AuthenticationController() : null
+            },
+            -1,
+            -1,
+            const <int>[-1],
+            null,
+            {
+              r'==': 1,
+              r'toString': 0,
+              r'noSuchMethod': 1,
+              r'hashCode': 0,
+              r'runtimeType': 0,
+              r'showLoginScreen': 0,
+              r'showSignUpScreen': 0,
+              r'index': 0
             })
       ],
       null,
       null,
-      <Type>[prefix1.HomeController],
-      1,
+      <Type>[
+        prefix1.HomeController,
+        prefix2.ProductionController,
+        prefix3.AuthenticationController
+      ],
+      3,
       {
         r'==': (dynamic instance) => (x) => instance == x,
         r'toString': (dynamic instance) => instance.toString,
         r'noSuchMethod': (dynamic instance) => instance.noSuchMethod,
         r'hashCode': (dynamic instance) => instance.hashCode,
         r'runtimeType': (dynamic instance) => instance.runtimeType,
-        r'index': (dynamic instance) => instance.index
+        r'index': (dynamic instance) => instance.index,
+        r'showOrderScreen': (dynamic instance) => instance.showOrderScreen,
+        r'showOrderDetailScreen': (dynamic instance) =>
+            instance.showOrderDetailScreen,
+        r'showProductDetailScreen': (dynamic instance) =>
+            instance.showProductDetailScreen,
+        r'showLoginScreen': (dynamic instance) => instance.showLoginScreen,
+        r'showSignUpScreen': (dynamic instance) => instance.showSignUpScreen
       },
       {},
       null,
