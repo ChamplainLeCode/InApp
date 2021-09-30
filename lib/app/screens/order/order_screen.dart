@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:in_app/app/screens/order/components/order_card.dart';
-import 'package:in_app/app/screens/order/components/order_detail_card.dart';
 import 'package:in_app/app/screens/order/components/order_status_button.dart';
 
 import 'package:karee/annotations.dart';

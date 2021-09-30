@@ -14,7 +14,7 @@ class OrderDetailScreen extends StatefulScreen {
 }
 
 class _OrderDetailState extends ScreenState<OrderDetailScreen> {
-  var _itemsIndex = 4;
+  var _itemsIndex = 1;
 
   // void _incrementOrderNumberItemsNumber(int itemsIndex) {
   //   setState(() {
@@ -256,7 +256,7 @@ class _OrderDetailState extends ScreenState<OrderDetailScreen> {
               ),
             ),
             SizedBox(
-              height: 50,
+              height: 30,
             ),
             Align(
               alignment: Alignment.topLeft,

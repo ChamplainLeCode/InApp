@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:in_app/app/screens/auth/components/app_logo.dart';
 import 'package:in_app/app/screens/auth/components/social_button.dart';
-
-import 'package:in_app/app/utils/Style.dart';
 
 import 'package:karee/annotations.dart';
 import 'package:karee/widgets.dart';
