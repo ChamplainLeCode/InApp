@@ -79,18 +79,6 @@ class OrderDetailCard extends StatelessComponent {
               ],
             ),
             Positioned(
-              // Icone cliquable de suppression de produit de la commande
-              top: 0,
-              right: 0,
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.close,
-                  size: 20,
-                ),
-              ),
-            ),
-            Positioned(
               bottom: 0,
               left: 0,
               child: Container(
@@ -117,6 +105,18 @@ class OrderDetailCard extends StatelessComponent {
                       ),
                     ),
                   ],
+                ),
+              ),
+            ),
+            Positioned(
+              // Icone cliquable de suppression de produit de la commande
+              top: 0,
+              right: 0,
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.close,
+                  size: 20,
                 ),
               ),
             ),

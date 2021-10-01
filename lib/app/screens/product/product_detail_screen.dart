@@ -2,13 +2,12 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import 'package:karee/annotations.dart';
 import 'package:karee/widgets.dart';
 
 /// Generated Karee Screen
 ///
 /// `ProductDetailScreen` is set as Screen with name ``
-@Screen('productdetail', isInitial: true)
+// @Screen('productdetail', isInitial: true)
 class ProductDetailScreen extends StatefulScreen {
   _ProductDetailState createState() => new _ProductDetailState();
 }
@@ -394,7 +393,7 @@ class _ProductDetailState extends ScreenState<ProductDetailScreen> {
                       child: IconButton(
                         icon: Icon(
                           // Bouton de retour en arrière
-                          Icons.arrow_back_ios_new,
+                          Icons.arrow_back_ios,
                           color: Color(0xff909195),
                         ),
                         onPressed: () {},

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:in_app/app/screens/pay/components/payment_method.dart';
 
-import 'package:karee/annotations.dart';
 import 'package:karee/widgets.dart';
 
 /// Generated Karee Screen
 ///
 /// `PaymentAlternativesScreen` is set as Screen with name ``
-@Screen('paymentalternatives', isInitial: false)
+// @Screen('paymentalternatives', isInitial: false)
 class PaymentAlternativesScreen extends StatefulScreen {
   _PaymentAlternativesState createState() => new _PaymentAlternativesState();
 }

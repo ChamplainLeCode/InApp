@@ -15,7 +15,7 @@ class FormTextField extends StatelessComponent {
     return ClipRRect(
       child: Container(
         height: 40,
-        margin: const EdgeInsets.only(bottom: 10, top: 10, left: 50, right: 50),
+        margin: const EdgeInsets.only(bottom: 10, top: 10, left: 10, right: 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           color: Style.whiteText,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:in_app/app/screens/auth/components/app_logo.dart';
 
-import 'package:karee/annotations.dart';
+import 'package:karee/navigation.dart';
 import 'package:karee/widgets.dart';
 
 import 'components/form_button.dart';
@@ -11,7 +11,7 @@ import 'components/social_button.dart';
 /// Generated Karee Screen
 ///
 /// `SignUpScreen` is set as Screen with name ``
-@Screen('signup', isInitial: false)
+// @Screen('signup', isInitial: false)
 class SignUpScreen extends StatefulScreen {
   _SignUpState createState() => new _SignUpState();
 }
@@ -27,27 +27,26 @@ class _SignUpState extends ScreenState<SignUpScreen> {
           // Retour en arrière
           icon: Icon(Icons.arrow_back),
           color: Color(0xff123456),
-          onPressed: () {},
+          onPressed: () => KareeRouter.goBack(),
         ),
         elevation: 0,
         backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
+        padding: EdgeInsets.fromLTRB(40, 0, 40, 30),
         // Rendre la page scrollable à la rotation
         child: Column(
           // Empilation des élements
           children: [
             AppLogo(), // InApp logo with personnalisation
             Container(
-              margin: EdgeInsets.fromLTRB(50, 45, 0, 0),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  // Texte indicateur d'action
-                  'Create your Account',
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
+              margin: EdgeInsets.fromLTRB(10, 45, 0, 0),
+              alignment: Alignment.topLeft,
+              child: Text(
+                // Texte indicateur d'action
+                'Create your Account',
+                style: TextStyle(
+                  fontSize: 18,
                 ),
               ),
             ),
@@ -61,8 +60,12 @@ class _SignUpState extends ScreenState<SignUpScreen> {
             SizedBox(
               height: 15,
             ),
-            FormButton(
-                'Sign up'), // Component - Bouton de validation du formulaire
+            Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: FormButton(
+                  text: 'Sign up',
+                  onTap: () => KareeRouter.goto('/'),
+                )), // Component - Bouton de validation du formulaire
             SizedBox(
               height: 50,
             ),

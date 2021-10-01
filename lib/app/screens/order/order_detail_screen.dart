@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:karee/navigation.dart';
 
-import 'package:karee/annotations.dart';
 import 'package:karee/widgets.dart';
 
 import 'components/order_detail_card.dart';
@@ -8,13 +8,13 @@ import 'components/order_detail_card.dart';
 /// Generated Karee Screen
 ///
 /// `OrderDetailScreen` is set as Screen with name ``
-@Screen('orderdetail', isInitial: false)
+// @Screen('orderdetail', isInitial: false)
 class OrderDetailScreen extends StatefulScreen {
   _OrderDetailState createState() => new _OrderDetailState();
 }
 
 class _OrderDetailState extends ScreenState<OrderDetailScreen> {
-  var _itemsIndex = 1;
+  late int _itemsIndex;
 
   // void _incrementOrderNumberItemsNumber(int itemsIndex) {
   //   setState(() {
@@ -29,6 +29,12 @@ class _OrderDetailState extends ScreenState<OrderDetailScreen> {
   // }
 
   @override
+  void initState() {
+    _itemsIndex = 3;
+    super.initState();
+  }
+
+  @override
   Widget builder(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -37,7 +43,7 @@ class _OrderDetailState extends ScreenState<OrderDetailScreen> {
           // Retour en arrière
           icon: Icon(Icons.arrow_back),
           color: Color(0xff123456),
-          onPressed: () {},
+          onPressed: () => KareeRouter.goBack(),
         ),
         title: Text(
           // Texte de statut de page
@@ -160,17 +166,16 @@ class _OrderDetailState extends ScreenState<OrderDetailScreen> {
                         SizedBox(
                           height: 20,
                         ),
-                        Row(
-                          children: [
-                            Text(
+                        Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
                               'Order information',
+                              textAlign: TextAlign.left,
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 17,
                               ),
-                            ),
-                          ],
-                        ),
+                            )),
                         SizedBox(
                           height: 15,
                         ),
@@ -267,25 +272,25 @@ class _OrderDetailState extends ScreenState<OrderDetailScreen> {
                     Expanded(
                       child: ClipRRect(
                         borderRadius: BorderRadius.horizontal(
-                          right: Radius.circular(50),
-                        ),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0,
-                            primary: Color(0xffE13C47),
-                            padding: EdgeInsets.symmetric(
-                                vertical: 20, horizontal: 120),
-                          ),
-                          child: Text(
-                            'Re-order',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
+                            right: Radius.circular(50), left: Radius.zero),
+                        child: Container(
+                            color: Color(0xffE13C47),
+                            child: ElevatedButton(
+                                onPressed: () {},
+                                style: ElevatedButton.styleFrom(
+                                  elevation: 0,
+                                  primary: Colors.transparent,
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: 20, horizontal: 120),
+                                ),
+                                child: Text(
+                                  'Re-order',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                  ),
+                                ))),
                       ),
                       flex: 10,
                     ),
@@ -319,22 +324,24 @@ class _OrderDetailState extends ScreenState<OrderDetailScreen> {
                         borderRadius: BorderRadius.horizontal(
                           left: Radius.circular(50),
                         ),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0,
-                            primary: Color(0xff222433),
-                            padding: EdgeInsets.fromLTRB(100, 20, 60, 20),
-                          ),
-                          child: Text(
-                            'Leave Feedback',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
+                        child: Container(
+                            color: Color(0xff222433),
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                elevation: 0,
+                                primary: Colors.transparent,
+                                padding: EdgeInsets.fromLTRB(100, 20, 60, 20),
+                              ),
+                              child: Text(
+                                'Leave Feedback',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            )),
                       ),
                       flex: 10,
                     ),

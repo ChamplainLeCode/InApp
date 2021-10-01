@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:in_app/app/utils/Style.dart';
 import 'package:karee/annotations.dart';
 import 'package:karee/navigation.dart';
@@ -8,7 +7,7 @@ import 'package:karee/widgets.dart';
 /// Generated Karee Screen
 ///
 /// `SplashScreen` is set as Screen with name `spalsh`
-@Screen('spalsh', isInitial: false)
+@Screen('spalsh', isInitial: true)
 class SplashScreen extends StatefulScreen {
   _SplashState createState() => new _SplashState();
 }
@@ -17,15 +16,15 @@ class _SplashState extends ScreenState<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2), () => KareeRouter.goto("/login"));
-    Future.delayed(Duration(seconds: 2), () => KareeRouter.goto("/signup"));
-    Future.delayed(
-        Duration(seconds: 2), () => KareeRouter.goto("/paymentalternatives"));
-    Future.delayed(Duration(seconds: 2), () => KareeRouter.goto("/order"));
-    Future.delayed(
-        Duration(seconds: 2), () => KareeRouter.goto("/orderdetail"));
-    Future.delayed(
-        Duration(seconds: 2), () => KareeRouter.goto("/productdetail"));
+    Future.delayed(Duration(seconds: 3), () => KareeRouter.goto("/login"));
+    // Future.delayed(Duration(seconds: 2), () => KareeRouter.goto("/signup"));
+    // Future.delayed(
+    //     Duration(seconds: 2), () => KareeRouter.goto("/paymentalternatives"));
+    // Future.delayed(Duration(seconds: 2), () => KareeRouter.goto("/order"));
+    // Future.delayed(
+    //     Duration(seconds: 2), () => KareeRouter.goto("/orderdetail"));
+    // Future.delayed(
+    //     Duration(seconds: 2), () => KareeRouter.goto("/productdetail"));
   }
 
   @override
@@ -39,10 +38,14 @@ class _SplashState extends ScreenState<SplashScreen> {
           // SvgPicture.asset(
           //   'assets/images/inApp.svg',
           //   color: Colors.white,
-          // ),
-          ElevatedButton(
-              onPressed: () => KareeRouter.goto("/login"),
-              child: Text('Login')),
+          // // ),
+          // ElevatedButton(
+          //     onPressed: () {
+          //       print('tap before');
+          //       KareeRouter.goto("/login");
+          //       print('tap after');
+          //     },
+          //     child: Text('Login')),
           Align(
               alignment: Alignment.center,
               child: Text('InApp',

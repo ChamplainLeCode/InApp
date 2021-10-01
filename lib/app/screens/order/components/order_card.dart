@@ -143,7 +143,7 @@ class OrderCard extends StatelessComponent {
                               primary: Color(0xffECECEC),
                               padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
                             ),
-                            onPressed: () {},
+                            onPressed: () => KareeRouter.goto('/orderdetail'),
                             child: Text(
                               'Details',
                               style: TextStyle(

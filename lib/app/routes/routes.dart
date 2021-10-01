@@ -6,8 +6,8 @@ import 'package:karee/navigation.dart' show Route;
  */
 void registeredRoute() {
   Route.on('/', 'HomeController@index');
-  Route.on('/login', 'AuthentificationController@showLoginScreen');
-  Route.on('/signup', 'AuthentificationController@showSignupScreen');
+  Route.on('/login', 'AuthenticationController@showLoginScreen');
+  Route.on('/signup', 'AuthenticationController@showSignUpScreen');
   Route.on('/paymentalternatives',
       'ProductionController@showPaymentAlternativesScreen');
   Route.on('/order', 'ProductionController@showOrderScreen');

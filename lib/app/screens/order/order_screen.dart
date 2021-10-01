@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:in_app/app/screens/order/components/order_card.dart';
 import 'package:in_app/app/screens/order/components/order_status_button.dart';
+import 'package:karee/navigation.dart';
 
-import 'package:karee/annotations.dart';
 import 'package:karee/widgets.dart';
 
 /// Generated Karee Screen
 ///
 /// `OrderScreen` is set as Screen with name `order`
-@Screen('order', isInitial: false)
+// @Screen('order', isInitial: false)
 class OrderScreen extends StatefulScreen {
   _OrderState createState() => new _OrderState();
 }
@@ -20,11 +20,10 @@ class _OrderState extends ScreenState<OrderScreen> {
       appBar: AppBar(
         // Barre indicatrice du statut de navigation
         leading: IconButton(
-          // Retour en arrière
-          icon: Icon(Icons.arrow_back),
-          color: Color(0xff123456),
-          onPressed: () {},
-        ),
+            // Retour en arrière
+            icon: Icon(Icons.arrow_back),
+            color: Color(0xff123456),
+            onPressed: () => KareeRouter.goBack()),
         title: Text(
           // Statut de navigation
           'My Orders',
