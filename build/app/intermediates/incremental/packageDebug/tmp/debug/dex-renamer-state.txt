@@ -1,4 +1,0 @@
-#Wed Sep 29 20:22:08 WAT 2021
-base.0=/home/fenyep/Documents/development/Bixterprise/in_app/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex

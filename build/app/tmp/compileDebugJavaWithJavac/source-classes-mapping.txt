@@ -1,4 +1,0 @@
-io/flutter/plugins/GeneratedPluginRegistrant.java
- io.flutter.plugins.GeneratedPluginRegistrant
-com/karee/app/in_app/in_app/BuildConfig.java
- com.karee.app.in_app.in_app.BuildConfig
