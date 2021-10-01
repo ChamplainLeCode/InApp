@@ -76,6 +76,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
               r'showOrderScreen': 0,
               r'showOrderDetailScreen': 0,
               r'showProductDetailScreen': 0,
+              r'showPaymentAlternativesScreen': 0,
               r'index': 0
             }),
         r.NonGenericClassMirrorImpl(
@@ -129,6 +130,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             instance.showOrderDetailScreen,
         r'showProductDetailScreen': (dynamic instance) =>
             instance.showProductDetailScreen,
+        r'showPaymentAlternativesScreen': (dynamic instance) =>
+            instance.showPaymentAlternativesScreen,
         r'showLoginScreen': (dynamic instance) => instance.showLoginScreen,
         r'showSignUpScreen': (dynamic instance) => instance.showSignUpScreen
       },

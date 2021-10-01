@@ -7,7 +7,7 @@ import 'package:karee/widgets.dart';
 /// Generated Karee Screen
 ///
 /// `PaymentAlternativesScreen` is set as Screen with name ``
-@Screen('paymentalternatives', isInitial: true)
+@Screen('paymentalternatives', isInitial: false)
 class PaymentAlternativesScreen extends StatefulScreen {
   _PaymentAlternativesState createState() => new _PaymentAlternativesState();
 }

@@ -8,7 +8,7 @@ import 'package:karee/widgets.dart';
 /// Generated Karee Screen
 ///
 /// `ProductDetailScreen` is set as Screen with name ``
-@Screen('productdetail', isInitial: false)
+@Screen('productdetail', isInitial: true)
 class ProductDetailScreen extends StatefulScreen {
   _ProductDetailState createState() => new _ProductDetailState();
 }
@@ -109,16 +109,22 @@ class _ProductDetailState extends ScreenState<ProductDetailScreen> {
                                 children: [
                                   Row(
                                     children: [
-                                      ElevatedButton(
-                                        style: ElevatedButton.styleFrom(
-                                          primary: Color(0xff45222F),
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(7),
+                                        child: Container(
+                                          padding:
+                                              EdgeInsets.fromLTRB(2, 0, 2, 0),
+                                          color: Color(0xff45222F),
+                                          child: IconButton(
+                                            // Boutton j'aime
+                                            onPressed: () {},
+                                            icon: Icon(
+                                              Icons.add,
+                                              color: Color(0xffCBA8AA),
+                                              size: 20,
+                                            ),
+                                          ),
                                         ),
-                                        child: Icon(
-                                          // Ajout d'un produit au panier
-                                          Icons.add,
-                                          color: Color(0xffCBA8AA),
-                                        ),
-                                        onPressed: () {},
                                       ),
                                       SizedBox(width: 10),
                                       Text(
@@ -129,23 +135,29 @@ class _ProductDetailState extends ScreenState<ProductDetailScreen> {
                                         ),
                                       ),
                                       SizedBox(width: 10),
-                                      ElevatedButton(
-                                        style: ElevatedButton.styleFrom(
-                                          primary: Color(0xff45222F),
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(7),
+                                        child: Container(
+                                          padding:
+                                              EdgeInsets.fromLTRB(2, 0, 2, 0),
+                                          color: Color(0xff45222F),
+                                          child: IconButton(
+                                            // Boutton j'aime
+                                            onPressed: () {},
+                                            icon: Icon(
+                                              Icons.remove,
+                                              color: Color(0xffCBA8AA),
+                                              size: 20,
+                                            ),
+                                          ),
                                         ),
-                                        child: Icon(
-                                          // Suppression d'un produit au panier
-                                          Icons.remove,
-                                          color: Color(0xffCBA8AA),
-                                        ),
-                                        onPressed: () {},
                                       ),
                                     ],
                                   ),
                                   Text(
                                     '\$12.99', // Prix total du nombre de produit voulu
                                     style: TextStyle(
-                                      fontSize: 30,
+                                      fontSize: 25,
                                       color: Colors.white,
                                     ),
                                   ),
@@ -163,7 +175,7 @@ class _ProductDetailState extends ScreenState<ProductDetailScreen> {
                                             'Ingredients\n', // Plus d'informations sur le produit
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 20,
+                                          fontSize: 17,
                                         ),
                                         children: [
                                           TextSpan(
@@ -171,7 +183,7 @@ class _ProductDetailState extends ScreenState<ProductDetailScreen> {
                                                 'Mixed with few meat and some other stuffs to prepare the sweet delicious salmon meal. Eat and Enjoy!!',
                                             style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 16,
+                                              fontSize: 14,
                                             ),
                                           ),
                                         ],
@@ -194,7 +206,7 @@ class _ProductDetailState extends ScreenState<ProductDetailScreen> {
                                           Text(
                                             'Maria and 35 others liked this', // Les utilisateurs qui ont aimé
                                             style: TextStyle(
-                                              fontSize: 16,
+                                              fontSize: 14,
                                               fontWeight: FontWeight.bold,
                                               color: Colors.white,
                                             ),
@@ -202,7 +214,7 @@ class _ProductDetailState extends ScreenState<ProductDetailScreen> {
                                           Text(
                                             '4.5 of 5',
                                             style: TextStyle(
-                                              fontSize: 16,
+                                              fontSize: 14,
                                               fontWeight: FontWeight.bold,
                                               color: Colors.white,
                                             ),

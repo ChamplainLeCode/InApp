@@ -1,5 +1,6 @@
 import 'package:in_app/app/screens/order/order_detail_screen.dart';
 import 'package:in_app/app/screens/order/order_screen.dart';
+import 'package:in_app/app/screens/pay/payment_alternatives_screen.dart';
 import 'package:in_app/app/screens/product/product_detail_screen.dart';
 import 'package:in_app/app/screens/pay/payment_alternatives_screen.dart';
 import 'package:karee/annotations.dart';
