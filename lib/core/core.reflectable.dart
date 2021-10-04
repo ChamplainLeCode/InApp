@@ -3,11 +3,11 @@
 // @dart = 2.12
 
 import 'dart:core';
-import 'package:in_app/app/controllers/dashboard/dash_board_controller.dart'
-    as prefix1;
-import 'package:in_app/app/controllers/home/home_controller.dart' as prefix2;
-import 'package:in_app/app/controllers/settings/settings_controller.dart'
+import 'package:in_app/app/controllers/auth/authentication_controller.dart'
     as prefix3;
+import 'package:in_app/app/controllers/home/home_controller.dart' as prefix1;
+import 'package:in_app/app/controllers/product/production_controller.dart'
+    as prefix2;
 import 'package:karee_inject/src/annotations/controller.dart' as prefix0;
 
 // ignore_for_file: prefer_adjacent_string_concatenation
@@ -26,8 +26,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
   const prefix0.ControllerReflectable(): r.ReflectorData(
       <m.TypeMirror>[
         r.NonGenericClassMirrorImpl(
-            r'DashBoardController',
-            r'.DashBoardController',
+            r'HomeController',
+            r'.HomeController',
             7,
             0,
             const prefix0.ControllerReflectable(),
@@ -37,7 +37,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             {},
             {},
-            {r'': (bool b) => () => b ? prefix1.DashBoardController() : null},
+            {r'': (bool b) => () => b ? prefix1.HomeController() : null},
             -1,
             -1,
             const <int>[-1],
@@ -48,20 +48,11 @@ final _data = <r.Reflectable, r.ReflectorData>{
               r'noSuchMethod': 1,
               r'hashCode': 0,
               r'runtimeType': 0,
-              r'home': 0,
-              r'menuScreen': 0,
-              r'constants': 0,
-              r'controllers': 0,
-              r'resources': 0,
-              r'routage': 0,
-              r'services': 0,
-              r'screenTab': 0,
-              r'userService': 0,
-              r'userService=': 1
+              r'index': 0
             }),
         r.NonGenericClassMirrorImpl(
-            r'HomeController',
-            r'.HomeController',
+            r'ProductionController',
+            r'.ProductionController',
             7,
             1,
             const prefix0.ControllerReflectable(),
@@ -71,7 +62,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             {},
             {},
-            {r'': (bool b) => () => b ? prefix2.HomeController() : null},
+            {r'': (bool b) => () => b ? prefix2.ProductionController() : null},
             -1,
             -1,
             const <int>[-1],
@@ -82,11 +73,15 @@ final _data = <r.Reflectable, r.ReflectorData>{
               r'noSuchMethod': 1,
               r'hashCode': 0,
               r'runtimeType': 0,
+              r'showOrderScreen': 0,
+              r'showOrderDetailScreen': 0,
+              r'showProductDetailScreen': 0,
+              r'showPaymentAlternativesScreen': 0,
               r'index': 0
             }),
         r.NonGenericClassMirrorImpl(
-            r'SettingsController',
-            r'.SettingsController',
+            r'AuthenticationController',
+            r'.AuthenticationController',
             7,
             2,
             const prefix0.ControllerReflectable(),
@@ -96,7 +91,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             {},
             {},
-            {r'': (bool b) => () => b ? prefix3.SettingsController() : null},
+            {
+              r'': (bool b) =>
+                  () => b ? prefix3.AuthenticationController() : null
+            },
             -1,
             -1,
             const <int>[-1],
@@ -107,15 +105,17 @@ final _data = <r.Reflectable, r.ReflectorData>{
               r'noSuchMethod': 1,
               r'hashCode': 0,
               r'runtimeType': 0,
+              r'showLoginScreen': 0,
+              r'showSignUpScreen': 0,
               r'index': 0
             })
       ],
       null,
       null,
       <Type>[
-        prefix1.DashBoardController,
-        prefix2.HomeController,
-        prefix3.SettingsController
+        prefix1.HomeController,
+        prefix2.ProductionController,
+        prefix3.AuthenticationController
       ],
       3,
       {
@@ -124,21 +124,18 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r'noSuchMethod': (dynamic instance) => instance.noSuchMethod,
         r'hashCode': (dynamic instance) => instance.hashCode,
         r'runtimeType': (dynamic instance) => instance.runtimeType,
-        r'home': (dynamic instance) => instance.home,
-        r'menuScreen': (dynamic instance) => instance.menuScreen,
-        r'constants': (dynamic instance) => instance.constants,
-        r'controllers': (dynamic instance) => instance.controllers,
-        r'resources': (dynamic instance) => instance.resources,
-        r'routage': (dynamic instance) => instance.routage,
-        r'services': (dynamic instance) => instance.services,
-        r'screenTab': (dynamic instance) => instance.screenTab,
-        r'userService': (dynamic instance) => instance.userService,
-        r'index': (dynamic instance) => instance.index
+        r'index': (dynamic instance) => instance.index,
+        r'showOrderScreen': (dynamic instance) => instance.showOrderScreen,
+        r'showOrderDetailScreen': (dynamic instance) =>
+            instance.showOrderDetailScreen,
+        r'showProductDetailScreen': (dynamic instance) =>
+            instance.showProductDetailScreen,
+        r'showPaymentAlternativesScreen': (dynamic instance) =>
+            instance.showPaymentAlternativesScreen,
+        r'showLoginScreen': (dynamic instance) => instance.showLoginScreen,
+        r'showSignUpScreen': (dynamic instance) => instance.showSignUpScreen
       },
-      {
-        r'userService=': (dynamic instance, value) =>
-            instance.userService = value
-      },
+      {},
       null,
       [
         const [0, 0, null],

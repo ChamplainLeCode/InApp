@@ -26,9 +26,12 @@ dependencies:
 # Use with the CupertinoIcons class for iOS style icons.
    cupertino_icons: any
 
-   karee: ^2.1.1
-   url_launcher: ^6.0.0
+   karee: 
+   flutter_svg: ^0.22.0
+   # url_launcher: ^6.0.0
+
    reflectable: ^3.0.1
+   url_launcher: ^6.0.10
 
 dev_dependencies:
    flutter_test:
@@ -58,6 +61,13 @@ flutter:
       - resources/config/
       - resources/i18n/
       - assets/images/
+   fonts:
+    - family: Pacifico
+      fonts:
+        - asset: assets/fonts/Pacifico.ttf
+    - family: Lora
+      fonts:
+        - asset: assets/fonts/Lora-BoldItalic.ttf
 #   - images/a_dot_burr.jpeg
 #   - images/a_dot_ham.jpeg
 

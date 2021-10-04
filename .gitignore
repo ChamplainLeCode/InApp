@@ -1,0 +1,12 @@
+
+.flutter-plugins
+
+.packages
+
+.flutter-plugins-dependencies
+
+build/
+
+.dart_tool
+
+.idea
