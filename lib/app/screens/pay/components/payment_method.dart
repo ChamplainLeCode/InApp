@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:karee/widgets.dart';
 
-// Component réutilisable pour générer un mode de paiement sur la screen
+/// Component - Mode de paiement
+///
 class PaymentMethod extends StatelessComponent {
-  final String paymentMethodLogo; // CHeemin vers la svg du logo
-  final String paymentMethodText; // Texte indicateur du mode de paiement
+  /// Chemin vers la svg du logo
+  final String paymentMethodLogo;
+
+  /// Texte indicateur du mode de paiement
+  final String paymentMethodText;
 
   PaymentMethod(this.paymentMethodLogo, this.paymentMethodText);
 
-  // Renvoi un bouton adapté à celui de la maquette
+  /// Renvoi un bouton adapté à celui de la maquette
   @override
   Widget builder(BuildContext context) {
     return ElevatedButton(

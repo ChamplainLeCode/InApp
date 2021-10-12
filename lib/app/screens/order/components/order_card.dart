@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:karee/karee.dart';
 
-// Composant de cartes de commandes
+/// Component - Cartes d'une commande
+///
 class OrderCard extends StatelessComponent {
   @override
   Widget builder(BuildContext context) {
@@ -11,11 +12,12 @@ class OrderCard extends StatelessComponent {
         height: 160,
         color: Color(0xffECECEC),
         width: double.infinity,
+
+        /// Affichage d'éléments par position
         child: Stack(
-          // Affichage d'éléments par position
           children: [
+            /// Informations sur la commande
             Container(
-              // Informations de la commande
               padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -23,15 +25,18 @@ class OrderCard extends StatelessComponent {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      /// Référence de commande
                       Text(
-                        'Order N#1947034', // Référence de commande
+                        'Order N#1947034',
                         style: TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
+
+                      /// Date de commande
                       Text(
-                        '02-01-2021', // Date de commande
+                        '02-01-2021',
                         style: TextStyle(
                           color: Color(0xff858585),
                           fontSize: 14,
@@ -40,21 +45,19 @@ class OrderCard extends StatelessComponent {
                       ),
                     ],
                   ),
-                  // SizedBox(
-                  //   height: 10,
-                  // ),
                   Row(
                     children: [
                       RichText(
                         textAlign: TextAlign.left,
                         text: TextSpan(
-                          text: "Tracking Number: ", // Tracking Number ?
+                          text: "Tracking Number: ",
                           style: TextStyle(
                             color: Color(0xff858585),
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
                           children: [
+                            /// Tracking Number
                             TextSpan(
                               text: "IW3475453455",
                               style: TextStyle(
@@ -68,23 +71,20 @@ class OrderCard extends StatelessComponent {
                       ),
                     ],
                   ),
-                  // SizedBox(
-                  //   height: 10,
-                  // ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       RichText(
                         textAlign: TextAlign.left,
                         text: TextSpan(
-                          text:
-                              "Quantity: ", // Nombre de produits de la commane
+                          text: "Quantity: ",
                           style: TextStyle(
                             color: Color(0xff858585),
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
                           children: [
+                            /// Nombre de produits de la commande
                             TextSpan(
                               text: "3",
                               style: TextStyle(
@@ -99,13 +99,14 @@ class OrderCard extends StatelessComponent {
                       RichText(
                         textAlign: TextAlign.left,
                         text: TextSpan(
-                          text: "Total Amount:  ", // Prix total de la commande
+                          text: "Total Amount:  ",
                           style: TextStyle(
                             color: Color(0xff858585),
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
                           children: [
+                            /// Prix total de la commande
                             TextSpan(
                               text: "\$6",
                               style: TextStyle(
@@ -123,7 +124,6 @@ class OrderCard extends StatelessComponent {
                     height: 5,
                   ),
                   Row(
-                    // Bouton de navigations vers la page de détail de la commande
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
@@ -137,13 +137,15 @@ class OrderCard extends StatelessComponent {
                         ),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(30),
+
+                          /// Bouton de navigation vers la page de détail de la commande
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               elevation: 0,
                               primary: Color(0xffECECEC),
                               padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
                             ),
-                            onPressed: () {},
+                            onPressed: () => KareeRouter.goto("/orderdetail"),
                             child: Text(
                               'Details',
                               style: TextStyle(
@@ -153,8 +155,10 @@ class OrderCard extends StatelessComponent {
                           ),
                         ),
                       ),
+
+                      /// Statut de la commande
                       Text(
-                        'Delivered', // Statut de la commande
+                        'Delivered',
                         style: TextStyle(
                           color: Color(0xff72D85A),
                         ),

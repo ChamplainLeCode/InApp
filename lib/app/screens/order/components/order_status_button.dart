@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:karee/widgets.dart';
 
-// Components réutilisable de filtrage du statut de la commande
-// A son clique il changera le statut de la page
-// Ceci pour afficher les commandes par statuts
+/// Component - Bouton de filtrage à l'affichage des commandes par statut
+/// A son clique il changera le statut de la page
+///
 class OrderStatusButton extends StatelessComponent {
-  final String orderStatusText; // text de statut des commande dans le bouton
+  /// Contenu du bouton de statut
+  final String orderStatusText;
 
-  OrderStatusButton(this.orderStatusText);
+  /// Si selectionné
+  final bool selected;
+
+  /// Prends le texte du bouton de statut et son état
+  OrderStatusButton(this.orderStatusText, this.selected);
 
   @override
   Widget builder(BuildContext context) {
@@ -21,14 +26,14 @@ class OrderStatusButton extends StatelessComponent {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             elevation: 0,
-            primary: Colors.white,
+            primary: selected ? Colors.black : Colors.white,
             padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
           ),
           onPressed: () {},
           child: Text(
             orderStatusText,
             style: TextStyle(
-              color: Colors.black,
+              color: selected ? Colors.white : Colors.black,
               fontSize: 12,
             ),
           ),

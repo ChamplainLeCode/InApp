@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:in_app/app/screens/order/components/order_details_button.dart';
+import 'package:in_app/app/screens/order/components/order_information.dart';
 
 import 'package:karee/annotations.dart';
 import 'package:karee/widgets.dart';
@@ -7,7 +9,7 @@ import 'components/order_detail_card.dart';
 
 /// Generated Karee Screen
 ///
-/// `OrderDetailScreen` is set as Screen with name ``
+/// `OrderDetailScreen` is set as Screen with name `orderdetail`
 @Screen('orderdetail', isInitial: false)
 class OrderDetailScreen extends StatefulScreen {
   _OrderDetailState createState() => new _OrderDetailState();
@@ -16,31 +18,20 @@ class OrderDetailScreen extends StatefulScreen {
 class _OrderDetailState extends ScreenState<OrderDetailScreen> {
   var _itemsIndex = 4;
 
-  // void _incrementOrderNumberItemsNumber(int itemsIndex) {
-  //   setState(() {
-  //     _itemsIndex = _itemsIndex + 1;
-  //   });
-  // }
-
-  // void _decrementOrderNumberItemsNumber(int itemsIndex) {
-  //   setState(() {
-  //     _itemsIndex = _itemsIndex - 1;
-  //   });
-  // }
-
   @override
   Widget builder(BuildContext context) {
     return Scaffold(
+      /// Barre de navigation supérieure
       appBar: AppBar(
-        // Barre de navigation supérieure
         leading: IconButton(
-          // Retour en arrière
           icon: Icon(Icons.arrow_back),
           color: Color(0xff123456),
+
+          /// Retour en arrière
           onPressed: () {},
         ),
+        // Statut de navigation
         title: Text(
-          // Texte de statut de page
           'Order details',
           style: TextStyle(
             color: Colors.black,
@@ -50,8 +41,9 @@ class _OrderDetailState extends ScreenState<OrderDetailScreen> {
         elevation: 0,
         backgroundColor: Colors.white,
       ),
+
+      /// Page scrollable à la rotation
       body: SingleChildScrollView(
-        // Pagescrollable même à la rotation
         child: Column(
           children: [
             Container(
@@ -66,8 +58,9 @@ class _OrderDetailState extends ScreenState<OrderDetailScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      /// Référence de commande
                       Text(
-                        'Order N#1947034', // Référence de commande
+                        'Order N#1947034',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 17.0,
@@ -77,8 +70,10 @@ class _OrderDetailState extends ScreenState<OrderDetailScreen> {
                       SizedBox(
                         width: 5,
                       ),
+
+                      /// Date de commande
                       Text(
-                        '02-01-2019', // Date de commande
+                        '02-01-2019',
                         style: TextStyle(
                           color: Colors.black,
                         ),
@@ -93,11 +88,12 @@ class _OrderDetailState extends ScreenState<OrderDetailScreen> {
                     child: RichText(
                       textAlign: TextAlign.left,
                       text: TextSpan(
-                        text: "Tracking Number: ", // Tracking Number
+                        text: "Tracking Number: ",
                         style: TextStyle(
                           color: Colors.grey,
                         ),
                         children: [
+                          /// Tracking Number
                           TextSpan(
                             text: "IW3475453455",
                             style: TextStyle(
@@ -111,9 +107,9 @@ class _OrderDetailState extends ScreenState<OrderDetailScreen> {
                     ),
                   ),
                   Row(
-                    // Statut de la commande
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
+                      /// Statut de la commande
                       Text(
                         'Delivered',
                         style: TextStyle(
@@ -123,9 +119,9 @@ class _OrderDetailState extends ScreenState<OrderDetailScreen> {
                     ],
                   ),
                   Row(
-                    // Nombre de produits dans la commande
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+                      /// Nombre de produits dans la commande
                       Text(
                         '${_itemsIndex.toString()} items',
                         style: TextStyle(color: Colors.black),
@@ -136,7 +132,7 @@ class _OrderDetailState extends ScreenState<OrderDetailScreen> {
                     height: 18,
                   ),
                   Column(
-                    // Liste des produits de la commande empilées
+                    /// Liste des produits de la commande empilées
                     children: List.generate(
                         _itemsIndex,
                         (index) => Column(
@@ -153,195 +149,25 @@ class _OrderDetailState extends ScreenState<OrderDetailScreen> {
                               ],
                             )).toList(),
                   ),
-                  Container(
-                    // Autres détails de la commande
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              'Order information',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 17,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Expanded(
-                              child: Text('Shopping Address:'),
-                              flex: 2,
-                            ),
-                            Expanded(
-                              child: Text(
-                                  '3 Newbrige Court, Chino Hills, CA 91709,  United States'),
-                              flex: 3,
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Text('Payment Method'),
-                              flex: 2,
-                            ),
-                            Expanded(
-                              child: Container(
-                                child: Row(
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/mobile-money.jpg', // Image indicateur de la méthode de paiement
-                                      width: 30,
-                                      height: 30,
-                                    ),
-                                    SizedBox(
-                                      width: 15,
-                                    ),
-                                    Text(
-                                        '**** **** **** 3947'), // Numéro de mode de paiement
-                                  ],
-                                ),
-                              ),
-                              flex: 3,
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Text('Discount'), // Réduction ?
-                              flex: 2,
-                            ),
-                            Expanded(
-                              child: Text('Nil'),
-                              flex: 3,
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Text(
-                                  'Total Amount'), // Montant total de la commande
-                              flex: 2,
-                            ),
-                            Expanded(
-                              child: Text('\$${12 * _itemsIndex}'),
-                              flex: 3,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+
+                  /// Autres informations sur la commande
+                  OrderInformation(_itemsIndex),
                 ],
               ),
             ),
             SizedBox(
               height: 50,
             ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Container(
-                width: double.infinity,
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.horizontal(
-                          right: Radius.circular(50),
-                        ),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0,
-                            primary: Color(0xffE13C47),
-                            padding: EdgeInsets.symmetric(
-                                vertical: 20, horizontal: 120),
-                          ),
-                          child: Text(
-                            'Re-order',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                      flex: 10,
-                    ),
-                    Expanded(
-                      child: SizedBox(
-                        width: 30,
-                      ),
-                      flex: 1,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+
+            ///* Les chiifres définnisent le style du bouton
+            /// Bouton de re-commandes
+            OrderDetailsButton('Re-order', 0),
             SizedBox(
               height: 15,
             ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Container(
-                width: double.infinity,
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: SizedBox(
-                        width: 30,
-                      ),
-                      flex: 1,
-                    ),
-                    Expanded(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.horizontal(
-                          left: Radius.circular(50),
-                        ),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0,
-                            primary: Color(0xff222433),
-                            padding: EdgeInsets.fromLTRB(100, 20, 60, 20),
-                          ),
-                          child: Text(
-                            'Leave Feedback',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                      flex: 10,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+
+            /// Bouton pour laisser des commantaires
+            OrderDetailsButton('Leave Feedback', 1),
             SizedBox(
               height: 20,
             ),

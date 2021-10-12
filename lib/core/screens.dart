@@ -13,12 +13,12 @@ import 'package:in_app/app/screens/splash/splash_screen.dart';
 
 List<Map<Symbol, dynamic>> screens = [
 
-	{#name: 'spalsh', #screen: () => SplashScreen()},
+	{#name: 'spalsh', #screen: () => SplashScreen(), #initial: true},
 	{#name: 'productdetail', #screen: () => ProductDetailScreen()},
 	{#name: 'orderdetail', #screen: () => OrderDetailScreen()},
 	{#name: 'order', #screen: () => OrderScreen()},
 	{#name: 'signup', #screen: () => SignUpScreen()},
 	{#name: 'login', #screen: () => LoginScreen()},
-	{#name: 'paymentalternatives', #screen: () => PaymentAlternativesScreen(), #initial: true},
+	{#name: 'paymentalternatives', #screen: () => PaymentAlternativesScreen()},
 
 ];

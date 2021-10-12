@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:in_app/app/utils/Style.dart';
 import 'package:karee/widgets.dart';
 
-// Component - Champ d'entréé du formulaire
-//
+/// Component - Champ d'entré du formulaire
+///
 class FormTextField extends StatelessComponent {
-  // contenu indicateur de l'entrée attendue dans le champ
+  /// Contenu indicateur de l'entrée attendue dans le champ
   final String fieldPlaceholder;
 
+  /// Prends le texte indicateur de l'entrée attendue dans le champ
   FormTextField(this.fieldPlaceholder);
 
   @override
@@ -27,17 +28,50 @@ class FormTextField extends StatelessComponent {
             ),
           ],
         ),
-        child: TextFormField(
-          // champ d'entréé
-          decoration: InputDecoration(
-            contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 6),
-            border: InputBorder.none,
-            hintText: fieldPlaceholder,
-            hintStyle: TextStyle(
-              fontSize: 12.0,
-            ),
-          ),
-        ),
+
+        /// champ d'entréé
+        child: fieldPlaceholder == "Email"
+            ? TextFormField(
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 6),
+                  border: InputBorder.none,
+                  hintText: fieldPlaceholder,
+                  hintStyle: TextStyle(
+                    fontSize: 12.0,
+                  ),
+                ),
+
+                /// Validateur pour la champ d'email
+                validator: (value) {
+                  if (value!.isEmpty ||
+                      !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}')
+                          .hasMatch(value)) {
+                    return 'Enter correct email';
+                  } else {
+                    return null;
+                  }
+                },
+              )
+            : TextFormField(
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 6),
+                  border: InputBorder.none,
+                  hintText: fieldPlaceholder,
+                  hintStyle: TextStyle(
+                    fontSize: 12.0,
+                  ),
+                ),
+
+                /// Validator for name field
+                validator: (value) {
+                  if (value!.isEmpty ||
+                      !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
+                    return 'Enter correct name';
+                  } else {
+                    return null;
+                  }
+                },
+              ),
       ),
     );
   }

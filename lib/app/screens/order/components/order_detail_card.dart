@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:karee/widgets.dart';
 
-// Component réutilisable pour créer un carte de produits dans la page
-// de détail d'une commande
+/// Component - Carte de detail d'un produit
+///
 class OrderDetailCard extends StatelessComponent {
-  // Informations du produit
-  // *Liste non exhaustive
-  final String productName; // Nom du produit
-  final String sellerName; // Nom du vendeur
-  final double productPrice; // Prix du produit
-  final String productImagePath; // Chemin vers l'image du produit
-  final double productRating; // Note sur le produit
+  /// Nom du produit
+  final String productName;
 
+  /// Nom du vendeur
+  final String sellerName;
+
+  /// Prix du produit
+  final double productPrice;
+
+  /// Chemin vers l'image du produit
+  final String productImagePath;
+
+  /// Note sur le produit
+  final double productRating;
+
+  /// Prends le nom,prix,chemin vers l'image,note du produit et le nom du vendeur
   OrderDetailCard(this.productImagePath, this.productName, this.sellerName,
       this.productPrice, this.productRating);
 
@@ -27,8 +35,8 @@ class OrderDetailCard extends StatelessComponent {
           children: [
             Row(
               children: [
+                /// Image du produit
                 Image.asset(
-                  // Image du produit
                   productImagePath,
                   fit: BoxFit.cover,
                   width: 130,
@@ -43,8 +51,8 @@ class OrderDetailCard extends StatelessComponent {
                         Row(
                           children: [
                             Expanded(
+                              /// Nom du produit
                               child: Text(
-                                // Nom du produit
                                 productName,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
@@ -54,8 +62,9 @@ class OrderDetailCard extends StatelessComponent {
                             ),
                           ],
                         ),
+
+                        /// nom du vendeur
                         Text(
-                          // nom du vendeur
                           sellerName,
                           style: TextStyle(
                             color: Color(0xff797979),
@@ -64,8 +73,9 @@ class OrderDetailCard extends StatelessComponent {
                         SizedBox(
                           height: 8,
                         ),
+
+                        /// Prix du produit affiché avec une précision de 4 (c-a-d = nombre.00)
                         Text(
-                          // Prix du produit affiché avec une précision de 4 (c-a-d = nombre.00)
                           '\$${productPrice.toStringAsPrecision(4)} ',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -79,9 +89,10 @@ class OrderDetailCard extends StatelessComponent {
               ],
             ),
             Positioned(
-              // Icone cliquable de suppression de produit de la commande
               top: 0,
               right: 0,
+
+              /// Icone cliquable de suppression de produit de la commande
               child: IconButton(
                 onPressed: () {},
                 icon: Icon(
@@ -99,8 +110,9 @@ class OrderDetailCard extends StatelessComponent {
                   horizontal: 4,
                 ),
                 color: Colors.white,
+
+                /// Note du produit
                 child: Row(
-                  // Note du produit
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [

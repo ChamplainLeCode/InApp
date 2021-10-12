@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:karee/widgets.dart';
 
-// Component - Utilisé pour l'envoi du formulaire
+/// Component - Envoi du formulaire
+///
 class FormButton extends StatelessComponent {
+  /// Contenu du bouton
   final String buttonText;
 
+  /// Prends le texte d'action du bouton
   FormButton(this.buttonText);
 
   @override

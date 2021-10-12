@@ -6,8 +6,8 @@ import 'package:karee/widgets.dart';
 
 /// Generated Karee Screen
 ///
-/// `PaymentAlternativesScreen` is set as Screen with name ``
-@Screen('paymentalternatives', isInitial: true)
+/// `PaymentAlternativesScreen` is set as Screen with name `paymentalternatives`
+@Screen('paymentalternatives', isInitial: false)
 class PaymentAlternativesScreen extends StatefulScreen {
   _PaymentAlternativesState createState() => new _PaymentAlternativesState();
 }
@@ -16,13 +16,13 @@ class _PaymentAlternativesState extends ScreenState<PaymentAlternativesScreen> {
   @override
   Widget builder(BuildContext context) {
     return Scaffold(
+      /// Barre supérieure de statut de navigation
       appBar: AppBar(
-        // Barre supérieure
-        // Barre supé
         leading: IconButton(
-          // Retour en arrière
           icon: Icon(Icons.arrow_back),
           color: Color(0xff123456),
+
+          /// Retour en arrière
           onPressed: () {},
         ),
         elevation: 0,
@@ -53,8 +53,11 @@ class _PaymentAlternativesState extends ScreenState<PaymentAlternativesScreen> {
               SizedBox(
                 height: 10,
               ),
-              PaymentMethod('assets/images/visa.png',
-                  'VISA'), // Buttons du mode de paiements
+
+              /// Listes des modes de paiements
+
+              PaymentMethod('assets/images/visa.png', 'VISA'),
+
               SizedBox(
                 height: 1,
               ),
@@ -85,14 +88,17 @@ class _PaymentAlternativesState extends ScreenState<PaymentAlternativesScreen> {
                     children: [
                       Column(
                         children: [
+                          /// Montant total de la transaction
                           Text(
-                            'Total 119.00GBP', // Montant total de la transaction
+                            'Total 119.00GBP',
                             style: TextStyle(
                               color: Color(0xff123456),
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
+
+                          /// VAT ?
                           Text(
                             '* VAT included',
                             style: TextStyle(

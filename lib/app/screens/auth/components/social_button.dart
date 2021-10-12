@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:karee/karee.dart';
 
-// Component réutilisable du mode de connexion
+/// Component - Mode de connexion
+///
 class SocialButton extends StatelessComponent {
-  // Variable contenant le chemin vers le svg du réseau social choisi
+  /// Chemin vers le svg du réseau social
   final String svgPath;
 
-  // Prends le lien vers le svg
+  /// Prends le chemin vers le svg du réseau social correspondant
   SocialButton(this.svgPath);
 
   @override
@@ -17,9 +18,10 @@ class SocialButton extends StatelessComponent {
         elevation: 1,
         primary: Colors.white,
       ),
-      onPressed: () {}, //
+      onPressed: () {},
+
+      /// Svg du réseau social
       child: SvgPicture.asset(
-        // Svg du réseau social
         svgPath,
         width: 25,
         height: 25,
